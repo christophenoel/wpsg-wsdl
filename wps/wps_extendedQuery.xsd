@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Joel Lim (Spacebel SA) -->
+<xs:schema xmlns="http://pvmep.esa.int/schemas/datamanager/extendedQuery" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://pvmep.esa.int/schemas/datamanager/extendedQuery" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="extendedQuery" type="extendedQueryType">
+		<xs:annotation>
+			<xs:documentation>List of optional additional query parameters. Key must be an OpenSearch parameter as defined in OGC 10-032 or OGC 13-026.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="extendedQueryType">
+		<xs:sequence>
+			<xs:element name="key" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Parameter key</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="value" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Parameter value</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

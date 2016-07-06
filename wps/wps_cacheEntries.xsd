@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Joel Lim (Spacebel SA) -->
+<xs:schema xmlns="http://proba-v-mep.esa.int/schemas/datamanager/cacheEntries" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://proba-v-mep.esa.int/schemas/datamanager/cacheEntries" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:element name="cacheEntries" type="cacheEntriesType"/>
+    <xs:complexType name="cacheEntriesType">
+        <xs:sequence>
+            <xs:element name="cacheEntry" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="timestamp" type="xs:dateTime">
+                            <xs:annotation>
+                                <xs:documentation>Timestamp when cache entry was last accessed.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="usageCount" type="xs:int">
+                            <xs:annotation>
+                                <xs:documentation>Number of processing chains using this EO data.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="size" type="xs:long">
+                            <xs:annotation>
+                                <xs:documentation>Size of file or directory content.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="urlToRemote" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>URL to EO data on Remote repository.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="urlToStore" type="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>URL to EO data on local Store.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="convert">
+                            <xs:annotation>
+                                <xs:documentation>Indicates if data is to be converted and the conversion status.</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:token">
+                                    <xs:enumeration value="NEVER"/>
+                                    <xs:enumeration value="NONE"/>
+                                    <xs:enumeration value="PENDING"/>
+                                    <xs:enumeration value="DONE"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="permanent" type="xs:boolean">
+                            <xs:annotation>
+                                <xs:documentation>Indicates that the corresponding data cannot be removed by the Data Manager.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
